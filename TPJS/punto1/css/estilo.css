@@ -1,0 +1,29 @@
+body{
+	background-image: url('../img/fondo.jpg');
+	max-width: 90%;
+}
+
+.contenedor{
+	text-align: left;
+	padding: 16px;
+	width: 40%;
+	margin-top: 10%;
+}
+
+input[type=submit]{
+	background-color: #B7950B ;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+input[type=submit]:hover{
+	opacity: 0.8;
+}
+.titulo{
+	font-size: 2rem;
+	color:white;
+}
