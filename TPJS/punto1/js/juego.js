@@ -98,7 +98,7 @@ function generar(n){
 			var campo = document.createElement("img"); //creacion del elemento img
 			campo.setAttribute("src", arregloImagen[index]); //asignacion del atributo
 			campo.setAttribute("id", index);
-			campo.setAttribute("onclick", "verificarImagen('"+arregloImagen[index]+"')");
+			campo.setAttribute("onclick", verificarImagen(this.arregloImagen[index]));
 			/*
 			campo.addEventListener(
 				"click",
