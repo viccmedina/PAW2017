@@ -1,0 +1,29 @@
+body{ /*afectara a todo el html*/
+    width: 400px;
+    margin: auto;
+    background-color: #E2ECEE;
+}
+
+
+.formularioTurno{ /*por se una clase afectara al contenido que tenga esta clase como atributo*/
+	display: inline-block;
+	border: 1px solid #CED5D7; /*establecemos un borde color "gris" alrededor del formulario*/
+	border-radius: 6px; /*redondeamos las esquinas del formulario*/
+	padding:  45px 45px 20px; /*establecemos cierto espacio alrededor de los campos del formuario*/
+	margin-top: 50px; /*nos separamos un poco del h2*/
+
+}
+
+div{ /*para los divs le ponemos un espacio entre ellos*/
+	 margin-top: 1em;
+}
+
+label{ /* estilos para los labels*/
+	display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+
+.botones{ /*centramos los botones*/
+	 padding-left: 90px;
+}

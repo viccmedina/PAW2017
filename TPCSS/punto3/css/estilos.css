@@ -1,0 +1,55 @@
+.formularioSubida{
+	margin-top: 5%;
+	border: 3px solid #f1f1f1;
+	width: 30%;
+	margin-top: 10%;
+	margin-left: 35%;
+	background-color: white;
+}
+
+input[type=submit], input[type=file], input[type=number]{
+	background-color: #4caf50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+}
+input[type=submit]:hover, input[type=file]:hover, input[type=number]:hover{
+	opacity: 0.8;
+}
+
+input[type=file], input[type=number]{
+	width: 89%;
+}
+
+h2{
+	text-align: center;
+}
+
+body{
+	background-image: url("../img/fondo.jpg");
+}
+
+.imagen{
+	padding: 10px;
+	background-color: none;
+	text-align: center;
+}
+.imgMostrar{
+	padding: 5px;
+}
+.linkRegresar{
+	background-color: #4caf50;
+	color: white;
+	padding: 14px 20px;
+	border: none;
+	text-align: center;
+	margin-left: 45%;
+	text-decoration: none;
+}
+.linkRegresar:hover{
+	opacity: 0.8;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../css/estilos.css">
+	<title>PAW TP CSS 2017</title>
+</head>
+<body>
+	<header>
+		<h1>PAW TP CSS</h1>	
+	</header>
+
+	<div class="contenedor">
+  		<img src="../img/CSS.png" alt="Logo CSS" style="width:90px">
+  		<p><span>Punto 1</span> ¿Qué significa que los estilos se apliquen en cascada? ¿Cómo se aplica el concepto de herencia?</p>
+  		<p>
+  			La cascada en Css es el mecanismo que controla el resultado final cuando, por existir declaraciones múltiples, surgen conflictivos sobre qué estilos se aplican a un elemento. Dicho de otra manera: si hay dos o más declaraciones que afectan a un elemento, la cascada determina cuál de ellas tiene preferencia, mayor peso, y se aplicará.
+  			La herencia es distinta de la cascada ya que involucra al árbol (DOM) del documento.
+			La herencia en CSS es el mecanismo mediante el cual ciertas propiedades se transmiten de un elemento padre a sus hijos.
+  		</p>
+	</div>
+
+	<div class="contenedor">
+  		<img src="../img/CSS.png" alt="Logo CSS" style="width:90px">
+  		<p><span>Punto 2</span>¿Por qué es necesario utilizar un CSS de Reset?</p>
+  		<p>
+  			Todos los navegadores agregan estilos a nuestro sitios. Dichos estilos, no son siempre los mismos sino que dependen del navegador que utilicemos. A causa de esto, nuestros propios estilos pueden verse afectados y provocar incosistencia en cuanto la vizualizacion del contenido. Por ello es necesario que se agreguen un reset (que esos estilos sean eliminados). 
+  		</p>
+	</div>
+
+	<div class="contenedor">
+  		<img src="../img/CSS.png" alt="Logo CSS" style="width:90px">
+  		<p><span>Punto 3</span>¿Qué es el CSS box model?</p>
+  		<p>
+  			El modelo de cajas es esencialmente un esquema donde cada box envuelve uno o mas elementos HTML. Cada caja tiene los siguientes elementos:
+  			<ul>
+  				<li><u>Margin:</u>Área por fuera del Border</li>
+  				<li><u>Border:</u>El Border va alrededor del Padding y del Content</li>
+  				<li><u>Padding:</u>Área alrededor del Content</li>
+  				<li><u>Content:</u>Contenido del box, donde imágenes y textos aparecen</li>
+  			</ul>
+  		</p>
+	</div>
+
+	<div class="contenedor">
+  		<img src="../img/CSS.png" alt="Logo CSS" style="width:90px">
+  		<p><span>Punto 4</span>¿Cuál es el código que hay que insertar en una hoja de estilo para poder usar WebFonts?</p>
+  		<p>
+  			Cuando los diseñadores desean utilizar una tipografía que no es estandar, deben recurrir al uso de Web Fonts. Para ello, se necesita contar con la fuente y agregar en la hoja de estilos la siguiente definicion:
+  			<br><br>
+			<code>
+				@font-face{
+							font-family: miFuente;
+							src: url(rutaDeMiFuente);
+						}
+			</code>
+  		</p>
+	</div>
+	
+	<div class="contenedor">
+  		<img src="../img/CSS.png" alt="Logo CSS" style="width:90px">
+  		<p><span>Punto 5</span>¿Qué son y para qué sirven los pseudoElementos?</p>
+  		<p>
+  			Los pseudo-Elements son usados para darle estilos a una parte específica de un elemeneto. Por ejemplo, si queremos darle estilos a la primer letra o línea de un elemento así como también si queremos insertar contenido antes o después de un elemento.
+  		</p>
+	</div>
+	
+	<div class="contenedor">
+  		<img src="../img/CSS.png" alt="Logo CSS" style="width:90px">
+  		<p><span>Punto 7</span>¿Qué es el view port? ¿Cómo se configura? ¿qué problema soluciona?</p>
+  		<p>
+			La viewport es la parte visible de la página web. Esta varia dependiendo del dispositivo por el cual se acceda a la misma, ya que no es lo mismo acceder a un sitio por una tablet o con un celular que con la computadora. Las resoluciones de pantallas son diferentes y nuestro sitio se debiera ajustar a la misma.
+			Debido a que actualmente y desde hace un tiempo el uso de dispositivos móviles de diversos tamaños es más frecuente, surgió el problema de hacer que un mismo sitio se vea bien en todos ellos. La introducción de HTML5 de una nueva etiqueta, hizo que de alguna manera todos los navegadores escalen el sitio a mostrar.
+			Para establecer la etiquete viewport, la misma debe ser declarada en el head de la siguiente manera:
+			<br><br>
+				<code>
+					meta name="viewport" content="width=device-width, initial-scale=1.0"			
+				</code>
+				<br><br>
+			Donde meta viewport le indica al nevagador como se debiera escalar según la dimensión de la pantalla. Y width=device-width le indica el ancho del dispositivo.
+  		</p>
+	</div>
+	
+		<div class="contenedor">
+  		<img src="../img/CSS.png" alt="Logo CSS" style="width:90px">
+  		<p><span>Punto 8</span> ¿Qué son las media Querys? Enumere los distintos tipos de medios y las principales características de cada uno de ellos.</p>
+  		<p>
+  			Media Query es una técnica introducida por CSS3. Se emplea la relgla @media para incluir un bloque de código CSS si cierta condición es verdadera.
+			<br><br>
+			<code>
+				@media only screen and (max-width: 500px) {
+    			body {
+        				background-color: lightblue;
+    				}
+				}	
+			</code>
+			<br><br>
+
+			En este caso, solamente se mostrará un background color si el ancho máximo es de 500px.
+			Características principales:
+			<ul>
+				<li><u>Aspect-ratio:</u>Mira las dimensiones relativas del dispositivo expresadas como una relación de aspecto: 16:9 por ejemplo.</li>
+				<li><u>Width y height:</u>Mira las dimensiones del área de visualización. Además pueden ser expresadas en valores mínimos y máximos.</li>
+				<li><u>Orientation:</u>Mira si el layout es panorámico ( el ancho es mayor que el alto ) o vertical ( el alto es mayor que el ancho ). Esto nos permite ajustar los diseños para dispositivos con propiedades de giro de la pantalla como el iPhone, y otros smartphones y los tablets.</li>
+				<li><u>Resolution:</u>Mira la densidad de los pixeles en el dispositivo de salida. Esto es especialmente útil cuando queremos aprovecharnos de las ventajas de los dispositivos que tiene una resolución mayor a 72 dpi.</li>
+				<li><u>Color, Color-index y monochrome:</u>Encuentran el número de color o bits por color. Esto nos permite crear diseños específicos para dispositivos monocromáticos.</li>
+			</ul>      
+  		</p>
+	</div>
+
+	<div class="contenedor">
+  		<img src="../img/CSS.png" alt="Logo CSS" style="width:90px">
+  		<p><span>Punto 9</span>En qué circunstancias se pueden utilizar las variables css. ¿Qué problemas pueden traer aparejadas? ¿Cuándo consideras que sería bueno utilizarlas? </p>
+  		<p>
+  			Las variables CSS, técnicamente llamadas "propiedades CSS no estándar",permiten cambiar dinámicamente los estilos aplicados en una página y mejorar las características de las propiedades CSS estándar.
+  			Permiten asignar cualquier valor a una propiedad cuyo nombre podemos elegir libremente.
+			Permiten reutilizar esos valores en cualquier otra propiedad gracias a la función var(). Por ejemplo:
+			<br><br>
+			<code>
+				:root {
+  					--color-principal: #06c;
+				}
+ 
+				#foo h1 {
+  				color: var(--color-principal);
+				}
+			</code>
+			<br><br>
+			La función var() obtiene el valor de la propiedad cuyo nombre se indica y lo inserta en el lugar donde se llama a la función.
+			De esta manera podemos personalizar contenido propio.
+  		</p>
+	</div>
+	
+
+</body>
+</html>

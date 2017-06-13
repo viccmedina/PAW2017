@@ -1,5 +1,12 @@
 var primero = true;
 var nivelUno = new Nivel(1, 8); /*genero el nivel uno con una matriz de 4x4*/
+var nivelDos = new Nivel(2, 16);
+var imgDos;
+var imgUno;
+var indexUno;
+var indexDos;
+var ultimo = false;
+var ruta = '../img3/cubierta.jpg';
 
 function comenzarJuego(){
 	var j1 = new Jugador('Victoria');
@@ -21,41 +28,54 @@ function generarTabla(nivel, arreglo){ //genera la tabla en donde se mostraran l
 			generar(4, arreglo);
 			break;
 		case 2:
-			generar(6);
+			generar(6, arrgelo);
 			break;		
 	}	
 }
 
-
-
-function verificarImagen(imagen){
+var verificarImagen = function(imagen, index){
+	
+	document.getElementById(index).setAttribute("src", imagen.getFront());
+	
 	//pregunto si es la primera carta que se dio vuelta
 	if (primero) {
 		primero = false;
-		console.log(imagen.getFront());
 		imgUno = imagen.getFront();
+		indexUno=index;
+		console.log('La carta es:' + imgUno);
+		
 	} else {
+		
 		//sino, es la segunda vez que se dio vuelta una carta
 		primero = true;
 		imgDos = imagen.getFront();
-		//console.log(imagen.getFron());
+		console.log('La carta es:' + imgDos);
+		indexDos = index;
 		//comparo si son las mismas cartas
 		if (imgUno == imgDos){
 			console.log("Son iguales");
 			nivelUno.setTotalMatches();
-			var par = document.getElementById(imagen.getID());
-			par.setAttribute("src", imagen.getBack());
+			indexDos = imagen.getID();
 			console.log("Total de macthes: " + nivelUno.getTotalMatches());
 			if (nivelUno.getTotalMatches() == 0){
 				console.log("Fin del Juego");
 				nivelUno.setStatusLevel();
+				alert("Nivel Completado");
+				if (ultimo == false){
+					nivelDos.setLevel(36);
+					nivelDos.shuffle();
+					ultimo = true;
+					generarTabla(nivelDos.getNumberLevel(), nivelDos.getCards());
+				}
+
 			}
 		}else{
 			console.log("No son Iguales");
+			document.getElementById(indexUno).setAttribute("src", ruta);
+			document.getElementById(indexDos).setAttribute("src", ruta);
 			}
 	}
 	console.log(this.nivelUno.getTotalMatches());
-	
 }
 
 function generar(n, arreglo){
@@ -80,16 +100,19 @@ function generar(n, arreglo){
 			celda.setAttribute("class", "fondoTD"); /*ponerle el fondo al td */
 			var campo = document.createElement("img"); //creacion del elemento img
 			console.log(arregloImagen[index].getFront());
-			campo.setAttribute("src", arregloImagen[index].getFront()); //asignacion del atributo
+			campo.setAttribute("src", arregloImagen[index].getBack()); //asignacion del atributo
 			campo.setAttribute("id", index);
-			campo.setAttribute("onclick", "verificarImagen('"+ arregloImagen[index] +"')");
-			/*
-			campo.addEventListener(
-				"click",
-				function (){verificarImagen(campo.getAttribute("src"));} //declaro una funcion anonima
-			);
-		*/
+			//campo.setAttribute("onclick", "verificarImagen('"+ arregloImagen[index].getFront() + " '," + index +" )");
 			
+			// CLOSURE
+			campo.addEventListener("click", verificarImagen.bind(null, arregloImagen[index], index), false);
+
+			/*
+			campo.addEventListener("click", function(){
+				var myImg = arregloImagen[index];
+				console.log("juan: ", myImg);
+				return verificarImagen(myImg);
+			});*/
 			celda.appendChild(campo); 
 			hilera.appendChild(celda);
 			index++;

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../css/estilo.css">
+
+	<title></title>
+</head>
+<body>
+	<img src="../img/logo.png" alt="Logo" class="logo">
+	<ul>
+  		<li><a href="#home">Home</a></li>
+   		<li class="dropdown">
+    		<a  class="dropbtn">Libros</a>
+    		<div class="dropdown-content">
+		      <a href="#">Juego de Trono</a>
+		      <a href="#">Choque de Reyes</a>
+		      <a href="#">Tormenta de Espadas</a>
+		      <a href="#">Festin de Cuervos</a>
+		      <a href="#">Danza de Dragones</a>
+    		</div>
+  		</li>
+  		<li class="dropdown">
+		    <a  class="dropbtn">Serie</a>
+		    <div class="dropdown-content">
+		      <a href="#">Temporada 1</a>
+		      <a href="#">Temporada 2</a>
+		      <a href="#">Temporada 3</a>
+		      <a href="#">Temporada 4</a>
+		      <a href="#">Temporada 5</a>
+		      <a href="#">Temporada 6</a>
+		      <a href="#">Temporada 7</a>
+    		</div>
+  		</li>
+	    <li class="dropdown">
+	    <a  class="dropbtn">Casa Principales</a>
+    		<div class="dropdown-content">
+		      <a href="#">Stark</a>
+		      <a href="#">Lannister</a>
+		      <a href="#">Targaryen</a>
+		      <a href="#">Martel</a>
+		      <a href="#">Tyrell</a>
+		      <a href="#">Frey</a>
+		      <a href="#">Baratheon</a>
+    		</div>
+    	</li>
+    	<li id="search">
+        <form action="" method="get">
+            <input type="text" name="campoBusqueda" class="campo" placeholder="Busqueda"/>
+            <input type="submit" name="boton" class="boton"></a>
+        </form>
+     </li>
+</ul>
+
+ <ul class="breadcrumb">
+  <li><a href="#">Inicio</a></li>
+  <li><a href="#">Libros</a></li>
+  <li><a href="#">Serie</a></li>
+  <li><a href="#">Galeria</a></li>
+</ul>
+
+<div class="slideshow-container">
+
+	<div class="mySlides fade">
+  		<div class="numbertext">1 / 5</div>
+  			<img src="../img/8.jpg" style="width:100%">
+	</div>
+
+	<div class="mySlides fade">
+  		<div class="numbertext">2 / 5</div>
+  			<img src="../img/1.jpg" style="width:100%">
+	</div>
+
+	<div class="mySlides fade">
+  		<div class="numbertext">3 / 5</div>
+  			<img src="../img/2.jpg" style="width:100%">
+	</div>
+
+	<div class="mySlides fade">
+  		<div class="numbertext">4 / 5</div>
+  			<img src="../img/4.jpg" style="width:100%">
+	</div>
+
+	<div class="mySlides fade">
+  		<div class="numbertext">5 / 5</div>
+  			<img src="../img/5.jpg" style="width:100%">
+	</div>
+
+</div>
+<br>
+
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+	var slideIndex = 0;
+	showSlides();
+
+	function showSlides() {
+	    var i;
+	    var slides = document.getElementsByClassName("mySlides");
+	    var dots = document.getElementsByClassName("dot");
+	    for (i = 0; i < slides.length; i++) {
+	       slides[i].style.display = "none";  
+	    }
+	    slideIndex++;
+	    if (slideIndex> slides.length) {slideIndex = 1}    
+	    for (i = 0; i < dots.length; i++) {
+	        dots[i].className = dots[i].className.replace(" active", "");
+	    }
+	    slides[slideIndex-1].style.display = "block";  
+	    dots[slideIndex-1].className += " active";
+	    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+<br>
+<div class="subMenu">
+	<h3 class="seccionH3">Featured Deparment</h3>	
+</div>
+
+<div class="">
+	
+	<ul class="listaLogo">
+		<li class="elementoLogo">
+			<img src="../img/logo1.jpg" alt="logo Tyrell">
+			<p>
+				... Crecer Fuerte ...
+			</p>
+		</li>
+		<li class="elementoLogo">
+			<img src="../img/logo2.jpg" alt="logo Baratheon">
+			<p>
+				... Nuestra es la Furia ... 
+			</p>
+		</li>
+		<li class="elementoLogo">
+			<img src="../img/logo3.jpg" alt="logo Lannister">
+			<p>
+				... Oye mi Rugido ...
+			</p>
+		</li>
+		<li class="elementoLogo">
+			<img src="../img/logo4.jpg" alt="logo Targaryen">
+			<p>
+				... Fuego y Sangre ...
+			</p>
+		</li>
+		<li class="elementoLogo">
+			<img src="../img/logo5.jpg" alt="logo Stark">
+			<p>
+				... Se Acerca el Invierno ...
+			</p>
+		</li>
+	</ul>
+</div>
+
+<img src="../img/logo.png" alt="logo GOT" class="logo">
+<br>
+
+	<section class="secciones">
+		<h3 class="seccionH3">Religiones</h3>
+		<p>
+   	 		La Fe de los Siete, la religión predominante y oficial de los Siete Reinos, que venera un 	dios con siete aspectos. 
+		</p>
+	</section>
+
+<section class="secciones">
+	<h3 class="seccionH3">Eddard Stark</h3>
+	<p>
+		"La sangre de los Primeros Hombres todavía fluye por las venas de los Stark, y se aferran a la creencia de que el hombre que dicta la sentencia debe blandir la espada."
+	</p>
+</section>
+
+<section class="secciones">
+	<h3 class="seccionH3">Tyrion Lannister</h3>
+	<p>
+		“La mente necesita libros como la espada necesita una piedra de afilar si quiere mantener su agudeza. Por eso leo tanto, Jon Snow"
+	</p>
+</section>
+
+
+<div>
+		<table>
+			<tr>
+				<td class="column">
+					<p> <strong>Poniente</strong>  es el continente en el que se desarrolla principalmente la historia. La mayor parte de este continente pertenece a los Siete Reinos, una nación soberana que se compone realmente de 9 regiones (el Norte, las Tierras de los Ríos, las Islas del Hierro, el Valle, el Occidente, las Tierras de la Corona, el Dominio, las Tierras de Tormentas y Dorne) cada una con sus respectivos señores feudales, de los cuales uno es el guardian o señor principal de la región y los demás señores son sus vasallos. Además de los siete reinos existe una larga extensión de tierra helada en el extremo norte del continente más allá del Muro.</p>
+				</td>
+				<td class="column">
+					<p><strong>Essos</strong> se encuentra al este de Poniente y al norte de Sothoryos. Conecta al norte con el Mar de los Escalofríos y al sur con el Mar del Verano y el Mar de Jade. Debido a su extensión, el continente presenta un clima muy variable, siendo más caluroso en el sur y el centro, y más frío en el norte. Culturalmente es también muy distinto entre sí, por un lado, el occidente se ve influenciado por el legado del Feudo Franco de Valyria. En el centro destaca el inmenso Mar Dothraki, lugar de interminables planicies y llanuras donde habitan los khalasars Dothrakis, incluyendo la única ciudad Dothraki, Vaes Dothrak. La zona oriental de es la más desconocida debido a que apenas está cartografiada.</p>
+				</td>
+				<td class="column">
+					<p> <strong>Ibben</strong> es un archipiélago situado en el Mar de los Escalofríos, en la costa norte del continente de Essos. Su capital es la ciudad de Puerto de Ibben, situada en la mayor isla del archipiélago, Ib.
+
+					El archipiélago de Ibben está formado por varias islas, siendo la mayor de ellas, con diferencia, la isla de Ib, donde se ubica Puerto de Ibben. Las otras islas son de pequeño tamaño. Ibben también fundó algunas colonias en el continente de Essos, como Nueva Íbica.
+
+					Ibben es regida por el Consejo de la Sombra, elegidos por el consejo de los Mil.</p>
+				</td>
+				<td class="column">
+					<h5>Newsletter</h5>
+					<form action="">
+						<input type="email" name="email" placeholder="Ingrese su correo" class="campo">
+						<input type="submit" name="Registrar" class="boton">	
+					</form>
+					<div>
+						<ul>
+							<li>
+								<img src="../img/minilogo1.jpg" alt="arciano" class="miniLogo">
+								<p>Arciano</p>
+							</li>
+		
+							<li>
+								<img src="../img/minilogo2.png" alt="trono" class="miniLogo">
+								<p>Trono de Espadas</p>
+							</li>
+		
+							<li>
+								<img src="../img/minilogo3.jpg" alt="insignia mano" class="miniLogo">
+								<p>Mano del Rey</p>
+							</li>
+						</ul>	
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+
+	<footer>
+		<ul>
+			<li><a href="#">Privacidad</a></li>
+			<li><a href="#">Contacto</a></li>
+			<li><a href="#">Pagina Oficial</a></li>
+		</ul>
+	</footer>
+</body>
+</html>

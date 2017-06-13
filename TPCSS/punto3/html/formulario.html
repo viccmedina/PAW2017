@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+	<title>Formulario de Subida</title>
+</head>
+<body>
+	<h2>Formulario de Subida</h2>
+	<form action="../php/subida.php" class="formularioSubida" enctype="multipart/form-data" method="POST">
+		<div>
+			<input type="number" name="ancho" step="0.01" placeholder="Ancho" required="">
+		</div>
+
+		<div>
+				<input type="number" name="alto" step="0.01" placeholder="Alto" required="">
+		</div>
+
+		<div>
+			<input type="file" name="imagenSubida">
+			<input type="submit" name="btnSubir" value="Subir">
+		</div>
+
+	</form>
+</body>
+</html>

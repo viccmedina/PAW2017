@@ -1,0 +1,57 @@
+body{
+	background-image: url("../img/fondo.jpg");
+}
+.formularioTurno{
+	margin-top: 5%;
+	border: 3px solid #f1f1f1;
+	width: 30%;
+	margin-left: 35%;
+	background-color: white;
+}
+
+input[type=text], input[type=email], input[type=date], input[type=number], select{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+input[type=submit], input[type=reset]{
+	background-color: #4caf50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+input[type=reset]{
+	background-color: #f44336;
+}
+
+input[type=submit]:hover, input[type=reset]:hover{
+	opacity: 0.8;
+}
+
+.contenedorImg{
+	text-align: center;
+	margin: 24px 0 12px 0;
+	width: 100%;
+}
+
+.logo{
+	width: 40%;
+	border-radius: 50%;
+}
+.contenedor{
+	padding: 16px;
+	width: 90%;
+}
+
+h2{
+	text-align: center;
+
+}
