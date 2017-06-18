@@ -11,6 +11,9 @@
 			}
 		} 
 	}else {
-			$respuesta = array('status' => 'ok', 'data': => ArticuloControlador::buscarArticulos());
+		if ($_GET["do"] == "listar_articulos") {
+			$respuesta = array('status' => 'ok', 'data' => ArticuloControlador::buscarArticulos());
 			echo json_encode($respuesta);
+		}
+			
 		};

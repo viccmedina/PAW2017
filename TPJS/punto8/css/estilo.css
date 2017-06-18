@@ -42,15 +42,16 @@ input[type=text], textarea, input[type=date]{
     resize: vertical;
 }
 
-input[type=submit] {
+input[type=buttom] {
     background-color: #333;
     color: white;
     padding: 12px 20px;
     border: none;
+    text-align: center;
     border-radius: 4px;
     cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type=buttom]:hover {
     background-color: #FC3927;
 }

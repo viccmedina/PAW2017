@@ -70,9 +70,12 @@ var verificarImagen = function(imagen, index){
 
 			}
 		}else{
-			console.log("No son Iguales");
+			setTimeout(function(){
+				console.log("No son Iguales");
 			document.getElementById(indexUno).setAttribute("src", ruta);
-			document.getElementById(indexDos).setAttribute("src", ruta);
+			document.getElementById(indexDos).setAttribute("src", ruta);	
+			}, 1000);
+			
 			}
 	}
 	console.log(this.nivelUno.getTotalMatches());

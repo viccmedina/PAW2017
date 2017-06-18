@@ -4,6 +4,28 @@ include_once ('conexion.php');
 
 class Articulo{
 
+	protected $titulo;
+	protected $fecha,
+	protected $comentario;
+
+	public function __construct($titulo, $fecha, $comentario){
+		$this->titulo = $titulo;
+		$this->fecha = $fecha;
+		$this->comentario = $comentario;
+	}
+
+	public function getTitulo(){
+		return $this->titulo;
+	}
+
+	public function getFecha(){
+		return $this->fecha;
+	}
+
+	public function getComentario(){
+		return $this->comentario;
+	}
+	
 	private static $conexion;
 
 	public static function conectar(){
@@ -16,6 +38,7 @@ class Articulo{
 	
 
 	public static function agregarArticulo($titulo, $fecha, $comentario){
+		#echo "estoy en agregar articulo desde articulo.php";
 		$query = "INSERT INTO articulo(titulo, fecha, comentario) VALUES (:titulo, :fecha, :comentario);";
 		self::conectar();
 		$resultado = self::$conexion->prepare($query);
@@ -23,12 +46,13 @@ class Articulo{
 		$resultado->bindParam(":titulo", $titulo);
 		$resultado->bindParam(":fecha", $fecha);
 		$resultado->bindParam(":comentario", $comentario);
-
+		self::desconectar();
 		
 		 if ($resultado->execute()){
-		 	self::desconectar();
 		 	return true;
-		 } 
+		 } else {
+		 	return $resultado->errorCode();
+		 }
 		 	self::desconectar();
 		 	return false; /*me devuelve el codigo de error de la ultima transaccion. puede ocurrir que se ingrese 								dos articulos con el mismo titulo, lo cual no esta permitido*/
 		
@@ -42,7 +66,7 @@ class Articulo{
 		$resultado = self::$conexion->prepare($query);
 		$resultado->execute();
 		if($resultado->rowCount() > 0){
-			$result = $resultado->fetchAll(PDO::FETCH_ASSOC);
+			$result = $resultado->fetchAll(PDO::FETCH_CLASS, "Articulo");
 			self::desconectar();
 			return $result;
 		}
