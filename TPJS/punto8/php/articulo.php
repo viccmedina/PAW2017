@@ -64,12 +64,14 @@ class Articulo{
 		$query = "SELECT * FROM articulo";
 		self::conectar();
 		$resultado = self::$conexion->prepare($query);
-		$resultado->execute();
-		if($resultado->rowCount() > 0){
-			$result = $resultado->fetchAll(PDO::FETCH_CLASS, "Articulo");
+		//$resultado->execute();
+		if($resultado->execute()){
+			$result = $resultado->fetchAll(PDO::FETCH_ASSOC);
 			self::desconectar();
+			echo $result;
 			return $result;
 		}
+		echo $result;
 		self::desconectar();
 		return false;
 	}

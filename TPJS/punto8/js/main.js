@@ -8,6 +8,7 @@ function listarArticulo(){
 	$.ajax({
 		url: "../php/interfaz.php",
 		method: "get",
+		dataType: "json",
 		data:{
 			"do" : "listar_articulos"
 		}
@@ -16,15 +17,18 @@ function listarArticulo(){
 		if(datos.status !== "ok"){
 			alert(datos.descripcion);
 		} else {
-			mostrarArticulos(datos.data);
+			mostrarArticulos(datos);
 		}
 	}).fail(function (datos){
+		//datos = JSON.parse(datos);
 		console.info("Error..!");
+		console.info(datos);
 	});
 }
 
 function mostrarArticulos(arreglo){
 	var body = document.getElementsByTagName("body");
+	consolo.log(arreglo.data);
 	for(var i = 0; i < arreglo.size(); i++){
 		var contenedor = document.createElement("div");
 		contenedor.setAttribute("class", "contenedor_articulo");

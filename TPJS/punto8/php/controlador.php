@@ -10,7 +10,7 @@ class ArticuloControlador{
 	}
 
 	public static function buscarArticulos(){
-		return Articulo::buscarArticulo();
+		return Articulo::buscarArticulos();
 	}
 }
  ?>
